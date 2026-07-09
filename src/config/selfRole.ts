@@ -1,0 +1,17 @@
+import { config } from './config.js';
+
+export const SELF_ROLE = {
+  CHANNEL_ID: config.panelChannelId || '1523009267022565557',
+  MEMBER_ROLE_ID: '1522624207165329673',
+
+  GAG_ROLE_ID: '1522663297864826961',
+  BUTTON_ID: 'selfrole_gag',
+
+  FEMALE_ROLE_ID: '1523333135591542874',
+  FEMALE_BUTTON_ID: 'selfrole_female',
+  FEMALE_EMOJI: '1523534481372217357',
+
+  MALE_ROLE_ID: '1523332380138405898',
+  MALE_BUTTON_ID: 'selfrole_male',
+  MALE_EMOJI: '1523533738766766082',
+} as const;
