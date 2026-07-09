@@ -7,7 +7,10 @@ import {
   Message,
   StringSelectMenuInteraction,
   ButtonInteraction,
+  AttachmentBuilder,
 } from 'discord.js';
+import path from 'path';
+import fs from 'fs';
 import { ExtendedClient } from '../types/index.js';
 import { logger } from '../utils/logger.js';
 import { AdminPanelModel } from '../database/models/AdminPanel.js';
@@ -103,11 +106,15 @@ export async function deployPanel(client: ExtendedClient): Promise<void> {
     const embed = await home.render(client);
     const components = buildComponents('home');
 
+    const gifPath = path.resolve('./assets/StarBot.gif');
+    const files = fs.existsSync(gifPath) ? [new AttachmentBuilder(gifPath, { name: 'StarBot.gif' })] : [];
+
     if (existingMessage) {
       logger.info('Existing Admin Panel found. Editing to update it...');
       await existingMessage.edit({
         embeds: [embed],
         components: components,
+        files: files,
       });
       logger.success('Admin Panel successfully updated.');
     } else {
@@ -115,6 +122,7 @@ export async function deployPanel(client: ExtendedClient): Promise<void> {
       const newMessage = await channel.send({
         embeds: [embed],
         components: components,
+        files: files,
       });
 
       await AdminPanelModel.create({

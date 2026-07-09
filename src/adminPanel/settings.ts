@@ -13,19 +13,22 @@ const settingsPage: AdminPanelPage = {
     const staffRole = TICKET_CONFIG.STAFF_ROLE_ID ? `<@&${TICKET_CONFIG.STAFF_ROLE_ID}>` : 'Not Configured';
 
     return new EmbedBuilder()
-      .setTitle('⚙️ General Bot Settings')
+      .setTitle('<a:Rainbowstar:1522684445092478986> General Bot Settings')
       .setDescription(
-        '# ⚙️ StarBot Global Configuration\n\n' +
+        '┌─── · 。ﾟ☆: *.☽ .* :☆ﾟ. ───┐\n' +
+          '      **System Settings**\n' +
+          '└─── · 。ﾟ☆: *.☽ .* :☆ﾟ. ───┘\n\n' +
           'Review the core system environment values and access parameters.\n\n' +
           '### 🛠️ Client & Workspace Parameters\n' +
-          `• **Client ID**: \`${config.clientId}\`\n` +
-          `• **Guild ID**: \`${config.guildId}\`\n\n` +
+          `• 🆔 **Client ID**: \`${config.clientId}\`\n` +
+          `• 🏰 **Guild ID**: \`${config.guildId}\`\n\n` +
           '### 🔐 Admin Panel Access Permissions\n' +
-          `• **Owner Role**: ${ownerRole} (\`${TICKET_CONFIG.OWNER_ROLE_ID}\`)\n` +
-          `• **Staff Role**: ${staffRole} (\`${TICKET_CONFIG.STAFF_ROLE_ID}\`)\n\n` +
+          `• 👑 **Owner Role**: ${ownerRole} (\`${TICKET_CONFIG.OWNER_ROLE_ID}\`)\n` +
+          `• 🛡️ **Staff Role**: ${staffRole} (\`${TICKET_CONFIG.STAFF_ROLE_ID}\`)\n\n` +
           '### ℹ️ Access Scope\n' +
           'Only members who possess the roles specified above are permitted to utilize panel components.'
       )
+      .setThumbnail('attachment://StarBot.gif')
       .setColor('#6B7280') // Gray
       .setTimestamp()
       .setFooter({ text: 'Star Syndrome • System Settings', iconURL: client.user?.displayAvatarURL() });

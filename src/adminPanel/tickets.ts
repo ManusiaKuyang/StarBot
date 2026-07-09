@@ -14,19 +14,22 @@ const ticketsPage: AdminPanelPage = {
     const staffRole = TICKET_CONFIG.STAFF_ROLE_ID ? `<@&${TICKET_CONFIG.STAFF_ROLE_ID}>` : 'Not Configured';
 
     return new EmbedBuilder()
-      .setTitle('🎫 Ticket Management')
+      .setTitle('<a:Rainbowstar:1522684445092478986> Ticket & Recruitment Configuration')
       .setDescription(
-        '# 🎫 Ticket & Recruitment Configuration\n\n' +
-          'Configure and monitor support and guild application tickets.\n\n' +
+        '┌─── · 。ﾟ☆: *.☽ .* :☆ﾟ. ───┐\n' +
+          '   **Ticket & Apply System**\n' +
+          '└─── · 。ﾟ☆: *.☽ .* :☆ﾟ. ───┘\n\n' +
+          'Configure and monitor user support tickets and guild recruitment applications.\n\n' +
           '### ⚙️ System Settings\n' +
-          `• **Ticket Category ID**: \`${categoryId}\`\n` +
-          `• **Panel Channel**: ${panelChannel}\n` +
-          `• **Log Channel**: ${logChannel}\n` +
-          `• **Staff Role**: ${staffRole}\n\n` +
-          '### 💡 Information\n' +
+          `• 📁 **Ticket Category ID**: \`${categoryId}\`\n` +
+          `• 📺 **Panel Channel**: ${panelChannel}\n` +
+          `• 📜 **Log Channel**: ${logChannel}\n` +
+          `• 🛡️ **Staff Role**: ${staffRole}\n\n` +
+          '### 💡 Info & Guide\n' +
           'When members click the apply button, a private channel is created in the target category. ' +
           'Staff and Owner roles can accept, reject, or cancel applications using panel buttons.'
       )
+      .setThumbnail('attachment://StarBot.gif')
       .setColor('#3B82F6') // Indigo/Blue
       .setTimestamp()
       .setFooter({ text: 'Star Syndrome • Ticket Panel', iconURL: client.user?.displayAvatarURL() });

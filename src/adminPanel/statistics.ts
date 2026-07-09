@@ -19,21 +19,24 @@ const statisticsPage: AdminPanelPage = {
     const rss = `${(memory.rss / 1024 / 1024).toFixed(2)} MB`;
 
     return new EmbedBuilder()
-      .setTitle('📊 Server & Bot Statistics')
+      .setTitle('<a:Rainbowstar:1522684445092478986> Server & Bot Statistics')
       .setDescription(
-        '# 📊 Star Syndrome & StarBot Metrics\n\n' +
+        '┌─── · 。ﾟ☆: *.☽ .* :☆ﾟ. ───┐\n' +
+          '      **System Metrics**\n' +
+          '└─── · 。ﾟ☆: *.☽ .* :☆ﾟ. ───┘\n\n' +
           'Monitor real-time statistics regarding your guild and bot performance.\n\n' +
           '### 📈 Guild Performance\n' +
-          `• **Total Guild Members**: \`${memberCount}\`\n` +
-          `• **Monitoring Guilds**: \`${activeGuilds}\`\n` +
-          `• **Cached Channels**: \`${activeChannels}\`\n\n` +
+          `• 👥 **Total Guild Members**: \`${memberCount}\`\n` +
+          `• 🌐 **Monitoring Guilds**: \`${activeGuilds}\`\n` +
+          `• 📁 **Cached Channels**: \`${activeChannels}\`\n\n` +
           '### 🖥️ Bot Resource Usage\n' +
-          `• **RSS Memory**: \`${rss}\`\n` +
-          `• **Heap Total**: \`${heapTotal}\`\n` +
-          `• **Heap Used**: \`${heapUsed}\` \n\n` +
+          `• 💾 **RSS Memory**: \`${rss}\`\n` +
+          `• ⚙️ **Heap Total**: \`${heapTotal}\`\n` +
+          `• 📊 **Heap Used**: \`${heapUsed}\` \n\n` +
           '### 💡 Info\n' +
           'Click the Refresh button under this panel to update these metrics at any time.'
       )
+      .setThumbnail('attachment://StarBot.gif')
       .setColor('#EC4899') // Pink
       .setTimestamp()
       .setFooter({ text: 'Star Syndrome • Performance Stats', iconURL: client.user?.displayAvatarURL() });

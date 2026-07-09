@@ -15,20 +15,23 @@ const selfRolePage: AdminPanelPage = {
     const maleRole = SELF_ROLE.MALE_ROLE_ID ? `<@&${SELF_ROLE.MALE_ROLE_ID}>` : 'Not Configured';
 
     return new EmbedBuilder()
-      .setTitle('🌱 Self Role System')
+      .setTitle('<a:Rainbowstar:1522684445092478986> Self-Assignable Roles System')
       .setDescription(
-        '# 🌱 Self-Assignable Roles\n\n' +
-          'Configure public roles that members can assign themselves.\n\n' +
+        '┌─── · 。ﾟ☆: *.☽ .* :☆ﾟ. ───┐\n' +
+          '      **Self Role Settings**\n' +
+          '└─── · 。ﾟ☆: *.☽ .* :☆ﾟ. ───┘\n\n' +
+          'Configure public roles that members can assign themselves dynamically.\n\n' +
           '### ⚙️ Channel & General Roles\n' +
-          `• **Panel Channel**: ${channel}\n` +
-          `• **Member Indicator Role**: ${memberRole}\n\n` +
+          `• 📺 **Panel Channel**: ${channel}\n` +
+          `• 🏷️ **Member Indicator Role**: ${memberRole}\n\n` +
           '### 🌱 Feature Roles\n' +
-          `• **Grow a Garden Role**: ${gagRole}\n` +
-          `• **Female Role**: ${femaleRole} (Emoji: <:Female:${SELF_ROLE.FEMALE_EMOJI}>)\n` +
-          `• **Male Role**: ${maleRole} (Emoji: <:Male:${SELF_ROLE.MALE_EMOJI}>)\n\n` +
+          `• 🌿 **Grow a Garden Role**: ${gagRole}\n` +
+          `• 👩 **Female Role**: ${femaleRole} (Emoji: <:Female:${SELF_ROLE.FEMALE_EMOJI}>)\n` +
+          `• 👨 **Male Role**: ${maleRole} (Emoji: <:Male:${SELF_ROLE.MALE_EMOJI}>)\n\n` +
           '### ℹ️ Overview\n' +
           'Buttons are sent in the configured Self Role channel. Clicking toggles the respective roles on/off.'
       )
+      .setThumbnail('attachment://StarBot.gif')
       .setColor('#10B981') // Emerald Green
       .setTimestamp()
       .setFooter({ text: 'Star Syndrome • Self Role Config', iconURL: client.user?.displayAvatarURL() });

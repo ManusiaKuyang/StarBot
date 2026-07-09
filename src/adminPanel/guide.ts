@@ -15,18 +15,21 @@ const guidePage: AdminPanelPage = {
     const ticketsChannel = TICKET_CONFIG.PANEL_CHANNEL_ID ? `<#${TICKET_CONFIG.PANEL_CHANNEL_ID}>` : 'Not Configured';
 
     return new EmbedBuilder()
-      .setTitle('📖 Server Guide System')
+      .setTitle('<a:Rainbowstar:1522684445092478986> Server Guide System')
       .setDescription(
-        '# 📖 Server Guide panel Config\n\n' +
+        '┌─── · 。ﾟ☆: *.☽ .* :☆ﾟ. ───┐\n' +
+          '      **Server Guide Config**\n' +
+          '└─── · 。ﾟ☆: *.☽ .* :☆ﾟ. ───┘\n\n' +
           'Configure the primary guidance embeds for new members.\n\n' +
           '### 📂 Guide Integration Channels\n' +
-          `• **Guide Channel**: ${channel}\n` +
-          `• **Self Role Channel**: ${selfRoleChannel}\n` +
-          `• **Recruitment/Tickets Channel**: ${ticketsChannel}\n\n` +
+          `• 📖 **Guide Channel**: ${channel}\n` +
+          `• 🌿 **Self Role Channel**: ${selfRoleChannel}\n` +
+          `• 🎟️ **Recruitment Channel**: ${ticketsChannel}\n\n` +
           '### 📖 Features\n' +
           '• Resolves local server rules channels dynamically.\n' +
           '• Directs members to choose roles, read rules, and apply for guild recruitment.'
       )
+      .setThumbnail('attachment://StarBot.gif')
       .setColor('#6366F1') // Indigo
       .setTimestamp()
       .setFooter({ text: 'Star Syndrome • Server Guide Config', iconURL: client.user?.displayAvatarURL() });
